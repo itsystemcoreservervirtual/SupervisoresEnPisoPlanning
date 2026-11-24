@@ -174,23 +174,6 @@
       color:var(--muted);
       margin-top:4px;
     }
-    .modal-close-x{
-      background:var(--chip);
-      color:var(--fg);
-      border:1px solid var(--line);
-      border-radius:8px;
-      width:34px;
-      height:34px;
-      font-family:var(--mono);
-      font-size:18px;
-      font-weight:700;
-      line-height:1;
-      cursor:pointer;
-      flex-shrink:0;
-      display:grid;
-      place-items:center;
-    }
-    .modal-close-x:hover{background:var(--line);color:#fff}
     .modal-body{
       padding:14px 18px;
       overflow-y:auto;
@@ -249,14 +232,14 @@
       padding:12px 18px;
       border-top:1px solid var(--line);
       display:flex;
-      justify-content:flex-end;
       background:rgba(10,22,48,.55);
     }
     .modal-close-btn{
+      width:100%;
       font-family:var(--mono);
       font-size:13px;
       font-weight:700;
-      padding:8px 18px;
+      padding:10px 18px;
       border-radius:8px;
       border:1px solid var(--accent);
       background:var(--accent-soft);
@@ -310,7 +293,6 @@
         <h3 id="teamsModalTitle">Distribución horaria de supervisores para la atención por Teams para asesores en gestion remota</h3>
         <div class="modal-sub" id="teamsModalSub">De acuerdo con el planning previamente compartido</div>
       </div>
-      <button type="button" class="modal-close-x" id="closeTeamsModalX" aria-label="Cerrar">×</button>
     </div>
     <div class="modal-body" id="teamsSchedList"></div>
     <div class="modal-foot">
@@ -443,8 +425,7 @@ document.getElementById("openTeamsSched").addEventListener("click", e => {
   openTeamsModal();
 });
 
-/* Eventos de cierre del modal: botón X, botón Cerrar, clic fuera y tecla Escape */
-document.getElementById("closeTeamsModalX").addEventListener("click", closeTeamsModal);
+/* Eventos de cierre del modal: botón Cerrar, clic fuera y tecla Escape */
 document.getElementById("closeTeamsModalBtn").addEventListener("click", closeTeamsModal);
 document.getElementById("teamsModal").addEventListener("click", e => {
   if(e.target === e.currentTarget) closeTeamsModal();
